@@ -1,0 +1,219 @@
+@import "config";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+
+  nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .nav-brand {
+      margin: 10px 0 0 15px;
+    }
+
+    .nav-items {
+      &__ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: 10px 15px 0;
+
+        .item {
+          margin: 5px;
+        }
+      }
+    }
+  }
+
+  .upload-section {
+    margin: 20px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__form {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border: 1px solid #dadada;
+      border-radius: 37px;
+      background-color: #efefef;
+
+      @include media-lg {
+        width: 40%;
+      }
+      @include media-md {
+        width: 50%;
+      }
+      @include media-sm {
+        width: 100%;
+      }
+
+      .items {
+        margin: 10px;
+        width: 85%;
+
+        input {
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: 3px;
+          background-color: white;
+        }
+      }
+    }
+
+    .btn input {
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      font-size: 1em;
+      font-weight: 500;
+      background: $primay-color;
+      cursor: pointer;
+
+      @include transition-ease;
+
+      &:hover {
+        background-color: darken($primay-color, 10%);
+      }
+      &:active {
+        background-color: darken($primay-color, 20%);
+      }
+    }
+  }
+}
+
+.data-section-container {
+  background-color: #c1cfff;
+}
+
+.data-section {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 22px;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 20px;
+
+  &__card {
+    grid-column: span 4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #dadada;
+    border-radius: 37px;
+    background-color: white;
+    overflow: hidden;
+
+    @include transition-ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 10px;
+      margin-top: -15px;
+
+      .right {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .download-btn,
+      .delete-btn {
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: white;
+        font-size: 1.1em;
+        font-weight: 500;
+        margin: 0 20px 20px 20px;
+        cursor: pointer;
+      }
+
+      .download-btn {
+        background: $secondary-color;
+        @include transition-ease;
+
+        &:hover {
+          background-color: darken($secondary-color, 10%);
+        }
+        &:active {
+          background-color: darken($secondary-color, 20%);
+        }
+      }
+
+      .delete-btn {
+        background: $danger;
+        @include transition-ease;
+
+        &:hover {
+          background-color: darken($danger, 10%);
+        }
+        &:active {
+          background-color: darken($danger, 20%);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      padding: 4em;
+    }
+
+    @include media-lg {
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .download-btn,
+        .delete-btn {
+          width: 100%;
+          margin: 0px 0 15px 0;
+        }
+      }
+    }
+
+    @include media-md {
+      grid-column: span 6;
+    }
+    @include media-sm {
+      grid-column: span 12;
+    }
+  }
+}
+
+#abs-img {
+  position: absolute;
+  z-index: -1;
+  bottom: -115px;
+}
+
+.img-container {
+  margin: 30px;
+  border-radius: 37px;
+  background-color: #efefef;
+}

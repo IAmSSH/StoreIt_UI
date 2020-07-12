@@ -1,0 +1,25 @@
+$primay-color: #5892e0;
+$secondary-color: #4cbbb9;
+$danger: #ff7272;
+
+@mixin media-lg {
+  @media screen and (max-width: 986px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 772px) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media screen and (max-width: 587px) {
+    @content;
+  }
+}
+
+@mixin transition-ease {
+  transition: all 0.2s ease-in-out;
+}
